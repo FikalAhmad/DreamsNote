@@ -7,7 +7,7 @@ const BottomNavbar = () => {
     <div className={BNContainer}>
       <div className="btn--wrap">
         <button className="btn--button">
-          <Link to="/addnote" className="btn--link">
+          <Link to="/addnotes" className="btn--link">
             <img src={plusIcon} alt="" />
           </Link>
         </button>

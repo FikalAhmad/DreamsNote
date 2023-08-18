@@ -3,7 +3,7 @@ import { css } from "@emotion/css";
 export const homeContainer = css`
   margin: auto;
   padding: 42px 21px;
-  max-width: 42rem;
+  max-width: 768px;
   font-family: CircularMedium;
   background-color: #fdfdfd;
   height: auto;
@@ -15,6 +15,7 @@ export const homeContainer = css`
     }
     &--title {
       font-size: 80px;
+      color: var(--hijautua);
     }
     &--desc {
       color: #959e9c;

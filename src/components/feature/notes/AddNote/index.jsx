@@ -5,7 +5,7 @@ import { addNote } from "../notesSlice";
 import { addNoteContainer } from "./styles";
 import { useNavigate } from "react-router-dom";
 
-export const AddNoteForm = () => {
+export const AddNote = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -31,7 +31,6 @@ export const AddNoteForm = () => {
       navigate("/");
     }
   };
-
   return (
     <section className={addNoteContainer}>
       <h1>Add a New Note</h1>

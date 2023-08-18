@@ -1,13 +1,22 @@
+import { Link } from "react-router-dom";
 import { cardContainer } from "./styles";
 import pencilIcon from "/src/assets/icons/pencil-icon.png";
 
-const Card = ({ title, content }) => {
+const Card = ({ noteid, title, content }) => {
   return (
     <div className={cardContainer}>
-      <div className="card--title">{title}</div>
-      <div className="card--desc">{content}</div>
+      <p className="card--title">
+        <Link to={`/notes/${noteid}`} className="card--link">
+          {title}
+        </Link>
+      </p>
+      <div className="card--desc-wrap">
+        <p className="card--desc">{content}</p>
+      </div>
       <button className="card--btn">
-        <img src={pencilIcon} alt=""></img>
+        <Link to={`/editnotes/${noteid}`} className="card--link">
+          <img src={pencilIcon} alt="" />
+        </Link>
       </button>
     </div>
   );

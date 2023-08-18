@@ -6,7 +6,12 @@ const NotesList = () => {
   const notes = useSelector((state) => state.notes);
 
   const renderedNotes = notes.map((note) => (
-    <Card key={note.id} title={note.title} content={note.content} />
+    <Card
+      key={note.id}
+      noteid={note.id}
+      title={note.title}
+      content={note.content}
+    />
   ));
 
   return (

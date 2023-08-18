@@ -3,7 +3,9 @@ import "./Global/styles";
 import Home from "./pages/Home";
 import { Provider } from "react-redux";
 import { store } from "./components/store/store";
-import { AddNoteForm } from "./components/feature/notes/AddNote/addNotesForm";
+import { AddNote } from "./components/feature/notes/AddNote";
+import { ViewNotes } from "./components/feature/notes/ViewNotes.jsx";
+import { EditNote } from "./components/feature/notes/EditNote.jsx/index.jsx";
 
 const App = () => {
   return (
@@ -11,7 +13,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/addnote" element={<AddNoteForm />} />
+          <Route path="/addnotes" element={<AddNote />} />
+          <Route path="/notes/:noteId" element={<ViewNotes />} />
+          <Route path="/editnotes/:noteId" element={<EditNote />} />
         </Routes>
       </Router>
     </Provider>
