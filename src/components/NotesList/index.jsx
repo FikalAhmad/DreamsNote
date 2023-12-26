@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import Card from "../Card";
-import { notesListContainer } from "./styles";
 
 const NotesList = () => {
   const notes = useSelector((state) => state.notes);
@@ -19,7 +18,7 @@ const NotesList = () => {
   };
 
   return (
-    <div className={notesListContainer}>
+    <div>
       <div className="card--container">{renderedNotes()}</div>
     </div>
   );

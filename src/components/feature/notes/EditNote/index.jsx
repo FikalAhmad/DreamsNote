@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { noteUpdated } from "../notesSlice";
-import { EditNoteContainer } from "./styles";
 
 export const EditNote = () => {
   const { noteId } = useParams();
@@ -29,7 +27,7 @@ export const EditNote = () => {
   };
 
   return (
-    <div className={EditNoteContainer}>
+    <div>
       <div className="editnote">
         <h1 className="heading-1">Edit Note</h1>
         <form className="form">

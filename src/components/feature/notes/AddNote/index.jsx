@@ -2,7 +2,6 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from "../notesSlice";
-import { addNoteContainer } from "./styles";
 import { useNavigate } from "react-router-dom";
 
 export const AddNote = () => {
@@ -35,7 +34,7 @@ export const AddNote = () => {
   };
   console.log(createdAt);
   return (
-    <div className={addNoteContainer}>
+    <div>
       <div className="addnote">
         <h1 className="heading-1">Add a New Note</h1>
         <form className="form">

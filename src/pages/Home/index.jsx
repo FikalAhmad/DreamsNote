@@ -1,11 +1,10 @@
 import BottomNavbar from "../../components/BottomNavbar";
 import NotesList from "../../components/NotesList";
-import { homeContainer } from "./styles";
 
 const Home = () => {
   return (
     <>
-      <div className={homeContainer}>
+      <div>
         <div className="home">
           <div className="home--textcontainer">
             <h1 className="home--title">Dreams Note</h1>

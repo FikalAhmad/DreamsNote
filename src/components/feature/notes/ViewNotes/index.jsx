@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { ViewNoteContainer } from "./styles";
 
 export const ViewNotes = () => {
   const { noteId } = useParams();
@@ -18,7 +17,7 @@ export const ViewNotes = () => {
   }
 
   return (
-    <div className={ViewNoteContainer}>
+    <div>
       <div className="viewnote">
         <article className="post">
           <h1 className="heading-1">{note.title}</h1>
