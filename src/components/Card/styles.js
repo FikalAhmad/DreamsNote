@@ -1,43 +1,58 @@
 import { css } from "@emotion/css";
 
 export const cardContainer = css`
-  padding: 32px 36px;
-  border-radius: 32px;
-  min-width: 300px;
-  max-width: 327px;
-  max-height: 349px;
-  background-color: var(--hijaumuda);
-  color: var(--hijautua);
+  padding: 30px;
+  border-radius: 10px;
+  background-color: var(--birumuda);
+  width: 100%;
+  color: var(--birutua);
   font-family: CircularLight;
 
   .card {
     &--title {
-      font-size: 36px;
       font-family: CircularMedium;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
+      font-size: 24px;
+      white-space: nowrap; /* Prevent text from wrapping to the next line */
+      overflow: hidden; /* Hide any overflowing content */
+      text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
     }
     &--link {
-      color: var(--hijautua);
+      color: var(--birutua);
       text-decoration: none;
     }
     &--desc-wrap {
       overflow: hidden;
-      height: 100px;
+      height: 60px;
+      margin: 10px 0;
     }
     &--desc {
-      font-size: 24px;
-      margin: 10px 0 20px;
+      max-height: 3 * 1.2rem; /* Set the maximum height for three lines of text */
+      overflow: hidden; /* Hide any overflowing content */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* Number of lines to display */
+      line-height: 1.2rem;
+    }
+    &--navbottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &--date {
+      font-family: CircularMedium;
     }
     &--btn {
-      display: flex;
-      margin-left: auto;
-      max-width: 100px;
       border: none;
-      background-color: #eeeeee;
-      border-radius: 8px;
+      background-color: var(--birutua);
+      border-radius: 5px;
       padding: 8px;
+    }
+    &--btn img {
+      width: 24px;
+    }
+    &--btn-group {
+      display: flex;
+      gap: 15px;
     }
   }
 `;

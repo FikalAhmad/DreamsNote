@@ -10,11 +10,12 @@ export const notesSlice = createSlice({
       state.push(action.payload);
     },
     noteUpdated(state, action) {
-      const { id, title, content } = action.payload;
+      const { id, title, content, createdAt } = action.payload;
       const existingNote = state.find((note) => note.id === id);
       if (existingNote) {
         existingNote.title = title;
         existingNote.content = content;
+        existingNote.createdAt = createdAt;
       }
     },
   },

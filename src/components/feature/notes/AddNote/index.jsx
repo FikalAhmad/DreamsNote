@@ -11,6 +11,7 @@ export const AddNote = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const createdAt = new Date().toLocaleDateString("id-ID");
 
   const onTitleChanged = (e) => setTitle(e.target.value);
   const onContentChanged = (e) => setContent(e.target.value);
@@ -22,6 +23,7 @@ export const AddNote = () => {
           id: nanoid(),
           title,
           content,
+          createdAt,
         })
       );
 
@@ -31,35 +33,34 @@ export const AddNote = () => {
       navigate("/");
     }
   };
+  console.log(createdAt);
   return (
-    <section className={addNoteContainer}>
-      <h1>Add a New Note</h1>
-      <form className="form">
-        <label htmlFor="postTitle" className="form--label">
-          Note Title:
-        </label>
-        <input
-          type="text"
-          id="postTitle"
-          className="form--input"
-          name="postTitle"
-          value={title}
-          onChange={onTitleChanged}
-        />
-        <label htmlFor="postContent" className="form--label">
-          Content:
-        </label>
-        <textarea
-          id="postContent"
-          className="form--input_textarea"
-          name="postContent"
-          value={content}
-          onChange={onContentChanged}
-        />
-        <button type="button" className="form--btn" onClick={saveAddNotes}>
-          Save Note
-        </button>
-      </form>
-    </section>
+    <div className={addNoteContainer}>
+      <div className="addnote">
+        <h1 className="heading-1">Add a New Note</h1>
+        <form className="form">
+          <label className="form--label">Note Title</label>
+          <input
+            type="text"
+            id="postTitle"
+            className="form--input"
+            name="postTitle"
+            value={title}
+            onChange={onTitleChanged}
+          />
+          <label className="form--label">Content</label>
+          <textarea
+            id="postContent"
+            className="form--input_textarea"
+            name="postContent"
+            value={content}
+            onChange={onContentChanged}
+          />
+          <button type="button" className="form--btn" onClick={saveAddNotes}>
+            Save Note
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };

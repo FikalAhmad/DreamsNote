@@ -1,8 +1,8 @@
 import { css } from "@emotion/css";
 
-export const addNoteContainer = css`
+export const EditNoteContainer = css`
   background-color: var(--birutua);
-  .addnote {
+  .editnote {
     margin: auto;
     padding: 42px 50px;
     font-family: CircularMedium;
@@ -61,6 +61,7 @@ export const addNoteContainer = css`
       color: var(--birumuda);
       font-family: CircularBold;
       font-size: 16px;
+      width: 100%;
     }
   }
 `;

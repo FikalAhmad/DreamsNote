@@ -5,18 +5,22 @@ import { notesListContainer } from "./styles";
 const NotesList = () => {
   const notes = useSelector((state) => state.notes);
 
-  const renderedNotes = notes.map((note) => (
-    <Card
-      key={note.id}
-      noteid={note.id}
-      title={note.title}
-      content={note.content}
-    />
-  ));
+  const renderedNotes = () => {
+    return notes.map((note) => (
+      <div className="card--item" key={note.id}>
+        <Card
+          noteid={note.id}
+          title={note.title}
+          content={note.content}
+          date={note.createdAt}
+        />
+      </div>
+    ));
+  };
 
   return (
     <div className={notesListContainer}>
-      <div className="card--container">{renderedNotes}</div>
+      <div className="card--container">{renderedNotes()}</div>
     </div>
   );
 };

@@ -2,9 +2,8 @@ import { injectGlobal } from "@emotion/css";
 
 export const GlobalCss = injectGlobal`
   :root{
-    --hijaumuda: #C7D8B7;
-    --hijautua: #054B3A;
-    --hijaucerah: #DAFF8C;
+    --birumuda: #49A3DD;
+    --birutua: #E9F4F9;
   }
   * {
     margin:0;

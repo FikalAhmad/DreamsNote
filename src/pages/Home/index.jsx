@@ -6,14 +6,16 @@ const Home = () => {
   return (
     <>
       <div className={homeContainer}>
-        <div className="home--textcontainer">
-          <div className="home--title">Dreams Note</div>
-          <div className="home--desc">
-            write down your ideas, thoughts, dreams, or goals for the future.
+        <div className="home">
+          <div className="home--textcontainer">
+            <h1 className="home--title">Dreams Note</h1>
+            <p className="home--desc">
+              write down your ideas, thoughts, dreams, or goals for the future.
+            </p>
           </div>
+          <NotesList />
+          <BottomNavbar />
         </div>
-        <NotesList />
-        <BottomNavbar />
       </div>
     </>
   );
