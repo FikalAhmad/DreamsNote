@@ -1,22 +1,67 @@
-import BottomNavbar from "../../components/BottomNavbar";
-import NotesList from "../../components/NotesList";
+import {
+  AppShell,
+  Avatar,
+  Burger,
+  Button,
+  Group,
+  Stack,
+  Text,
+} from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 
-const Home = () => {
+const Home = ({ page }) => {
+  const [opened, { toggle }] = useDisclosure();
+
   return (
-    <>
-      <div>
-        <div className="home">
-          <div className="home--textcontainer">
-            <h1 className="home--title">Dreams Note</h1>
-            <p className="home--desc">
-              write down your ideas, thoughts, dreams, or goals for the future.
-            </p>
-          </div>
-          <NotesList />
-          <BottomNavbar />
-        </div>
-      </div>
-    </>
+    <AppShell
+      header={{ height: 60 }}
+      navbar={{ width: 250, breakpoint: "sm", collapsed: { mobile: !opened } }}
+      padding="md"
+    >
+      <AppShell.Header>
+        <Group h="100%" px="md">
+          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <Group w="100%" justify="space-between">
+            <Text fz="24px" fw="bold">
+              Dreams Note
+            </Text>
+            <Group>
+              <Text>Haikal</Text>
+              <Avatar src="./src/assets/img/kalprofile.png" />
+            </Group>
+          </Group>
+        </Group>
+      </AppShell.Header>
+      <AppShell.Navbar>
+        <Stack justify="flex-start" gap="xs">
+          <Button
+            variant="subtle"
+            size="md"
+            radius="xs"
+            color="rgba(0, 0, 0, 1)"
+          >
+            Notes
+          </Button>
+          <Button
+            variant="subtle"
+            size="md"
+            radius="xs"
+            color="rgba(0, 0, 0, 1)"
+          >
+            Todo List
+          </Button>
+          <Button
+            variant="subtle"
+            size="md"
+            radius="xs"
+            color="rgba(0, 0, 0, 1)"
+          >
+            Pomodoro Timer
+          </Button>
+        </Stack>
+      </AppShell.Navbar>
+      <AppShell.Main>{page}</AppShell.Main>
+    </AppShell>
   );
 };
 
