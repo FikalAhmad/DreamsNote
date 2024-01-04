@@ -19,16 +19,14 @@ const Home = ({ page }) => {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="md">
+        <Group h="100%" px="md" justify="space-between">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Group w="100%" justify="space-between">
-            <Text fz="24px" fw="bold">
-              Dreams Note
-            </Text>
-            <Group>
-              <Text>Haikal</Text>
-              <Avatar src="./src/assets/img/kalprofile.png" />
-            </Group>
+          <Text fz="24px" fw="bold">
+            Dreams Note
+          </Text>
+          <Group>
+            <Text>Haikal</Text>
+            <Avatar src="./src/assets/img/kalprofile.png" />
           </Group>
         </Group>
       </AppShell.Header>
@@ -39,6 +37,8 @@ const Home = ({ page }) => {
             size="md"
             radius="xs"
             color="rgba(0, 0, 0, 1)"
+            href="/"
+            component="a"
           >
             Notes
           </Button>
@@ -55,6 +55,8 @@ const Home = ({ page }) => {
             size="md"
             radius="xs"
             color="rgba(0, 0, 0, 1)"
+            component="a"
+            href="/pomodoro"
           >
             Pomodoro Timer
           </Button>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from "../notesSlice";
 import { useNavigate } from "react-router-dom";
+import { Button, Text, TextInput, Textarea } from "@mantine/core";
 
 export const AddNote = () => {
   const [title, setTitle] = useState("");
@@ -35,7 +36,7 @@ export const AddNote = () => {
   console.log(createdAt);
   return (
     <div>
-      <div className="addnote">
+      {/* <div className="addnote">
         <h1 className="heading-1">Add a New Note</h1>
         <form className="form">
           <label className="form--label">Note Title</label>
@@ -59,7 +60,24 @@ export const AddNote = () => {
             Save Note
           </button>
         </form>
-      </div>
+      </div> */}
+      <Text fz="32px" style={{ fontFamily: "PlusJakartaBold" }}>
+        Add Note
+      </Text>
+      <form>
+        <TextInput
+          size="md"
+          label="Note Title"
+          placeholder="Input your title here"
+        />
+        <Textarea
+          placeholder="Input your content here"
+          label="Note Content"
+          autosize
+          minRows={5}
+        />
+        <Button fullWidth>Save Note</Button>
+      </form>
     </div>
   );
 };
